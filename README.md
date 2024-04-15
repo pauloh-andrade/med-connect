@@ -4,10 +4,11 @@ Este é o README para a aplicação **[medConnect]**.
 
 ## Integrantes do Grupo
 
-- **[Paulo Henrique de Andrade Junior]:** Desenvolvedor Java Backend
-- **[Filipe de Oliveira Mendes] rm98959  :** Desenvolvedor Front-end.
-- **[Fernando Paparelli]:** Breve apresentação ou responsabilidades no projeto.
-- **[Vinicius]:** Breve apresentação ou responsabilidades no projeto.
+- **[Paulo Henrique de Andrade Junior] rm99714:** Desenvolvedor Backend Java.
+- **[Filipe de Oliveira Mendes] rm98959  :** Desenvolvedor Front-end React.
+- **[Fernando Paparelli] rm551022:** Scrum master e infra.
+- **[Vinicius Pedro de Souza] rm550907:** Analista de banco de dados.
+- **[Miron Gonçalves Marins] rm551801:** Cientista de dados.
 
 ## Como Rodar a Aplicação
 
@@ -58,7 +59,7 @@ Para rodar a aplicação, siga estas etapas:
 
 ## Vídeo de Apresentação
 
-Assista ao vídeo de apresentação da nossa proposta tecnológica, público-alvo e problemas que a aplicação se propõe a solucionar [aqui](link-para-o-vídeo).
+Assista ao vídeo de apresentação da nossa proposta tecnológica, público-alvo e problemas que a aplicação se propõe a solucionar [aqui](link-para-o-vídeo](https://youtu.be/6wcKGa89850).
 
 ## Documentação da API
 
