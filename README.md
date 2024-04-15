@@ -50,7 +50,7 @@ Para rodar a aplicação, siga estas etapas:
 **Arquitetura:**
 
 ![Arquitetura](https://github.com/pauloh-andrade/med-connect/blob/main/documents/arquitetura.drawio.png)
-[Diagrama Entidade Relacionamento](https://github.com/pauloh-andrade/med-connect/blob/main/documents/DER.pdf)
+**DER:** [Diagrama Entidade Relacionamento](https://github.com/pauloh-andrade/med-connect/blob/main/documents/DER.pdf)
 
 ## Cronograma
 
