@@ -45,6 +45,8 @@ Para rodar a aplicação, siga estas etapas:
       ```bash
       mvn exec:java -Dexec.mainClass="nome.do.pacote.da.classe.Principal"
       ```
+## Documentação
+[DOC](https://github.com/pauloh-andrade/med-connect/blob/main/documents/MedConnect_2tdspv.pdf)
 
 ## Diagramas
 
