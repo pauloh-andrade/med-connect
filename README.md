@@ -14,8 +14,10 @@ Este é o README para a aplicação **[medConnect]**.
 Para rodar a aplicação, siga estas etapas:
 
 1. **Pré-requisitos:** 
-Java Development Kit (JDK) instalado na sua máquina. Você pode baixar e instalar o JDK a partir do site oficial da Oracle ou usar uma distribuição OpenJDK.
-Maven instalado na sua máquina. O Maven é um gerenciador de build e dependências para projetos Java. Você pode baixar e instalar o Maven a partir do site oficial do Apache Maven.
+- Java Development Kit (JDK) instalado na sua máquina. Você pode baixar e instalar o JDK a partir do site oficial da Oracle ou usar uma distribuição OpenJDK.
+- Maven instalado na sua máquina.
+
+  
 2. **Configuração:**
    - **Clone o Repositório:**
   
@@ -23,7 +25,7 @@ Maven instalado na sua máquina. O Maven é um gerenciador de build e dependênc
       git clone https://github.com/pauloh-andrade/med-connect
       ```
   
-  - **Navegue até o Diretório do Projeto:**
+   - **Navegue até o Diretório do Projeto:**
   
       ```bash
       cd medconnect
