@@ -1,7 +1,5 @@
 # MedConnect
 
-Este é o README para a aplicação **[medConnect]**.
-
 ## Integrantes do Grupo
 
 - **[Paulo Henrique de Andrade Junior] rm99714:** Desenvolvedor Backend Java.
