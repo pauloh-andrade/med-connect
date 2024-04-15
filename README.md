@@ -5,24 +5,54 @@ Este é o README para a aplicação **[medConnect]**.
 ## Integrantes do Grupo
 
 - **[Paulo Henrique de Andrade Junior]:** Desenvolvedor Java Backend
+- **[Filipe de Oliveira Mendes] rm98959  :** Desenvolvedor Front-end.
 - **[Fernando Paparelli]:** Breve apresentação ou responsabilidades no projeto.
-- **[Vinicius]:** Breve apresentação ou responsabilidades no projeto.
 - **[Vinicius]:** Breve apresentação ou responsabilidades no projeto.
 
 ## Como Rodar a Aplicação
 
 Para rodar a aplicação, siga estas etapas:
 
-1. **Pré-requisitos:** Descreva quaisquer pré-requisitos necessários para rodar a aplicação, como Java JDK, Maven, Docker, etc.
-2. **Configuração:** Forneça instruções detalhadas sobre como configurar o ambiente de desenvolvimento.
-3. **Execução:** Explique como iniciar a aplicação.
+1. **Pré-requisitos:** 
+Java Development Kit (JDK) instalado na sua máquina. Você pode baixar e instalar o JDK a partir do site oficial da Oracle ou usar uma distribuição OpenJDK.
+Maven instalado na sua máquina. O Maven é um gerenciador de build e dependências para projetos Java. Você pode baixar e instalar o Maven a partir do site oficial do Apache Maven.
+2. **Configuração:**
+   - **Clone o Repositório:**
+  
+      ```bash
+      git clone https://github.com/pauloh-andrade/med-connect
+      ```
+  
+  - **Navegue até o Diretório do Projeto:**
+  
+      ```bash
+      cd medconnect
+      ```
+
+3. **Execução:** 
+
+    - **Compile o Projeto:**
+
+      ```bash
+      mvn compile
+      ```
+
+    - **Execute a Aplicação:**
+
+      ```bash
+      mvn exec:java -Dexec.mainClass="nome.do.pacote.da.classe.Principal"
+      ```
 
 ## Diagramas
 
 Aqui está a imagem dos diagramas utilizados no projeto:
 
-![Diagrama de Classes](caminho/para/diagrama-de-classes.png)
-![Diagrama de Sequência](caminho/para/diagrama-de-sequencia.png)
+![Diagrama de Classes]()
+![Diagrama Entidade Relacionamento](https://github.com/pauloh-andrade/med-connect/blob/main/documents/DER.pdf)
+
+## Cronograma
+
+![Azure Board](https://github.com/pauloh-andrade/med-connect/blob/main/documents/cronograma_sprint_1.png)
 
 ## Vídeo de Apresentação
 
@@ -35,16 +65,35 @@ A seguir está a listagem de todos os endpoints da API:
 - **GET /clientes:** Retorna uma lista de todos os clientes.
 - **GET /clientes/{id}:** Retorna os detalhes de um cliente específico pelo ID.
 - **POST /clientes:** Cria um novo cliente.
-- **PUT /clientes/{id}:** Atualiza os detalhes de um cliente existente pelo ID.
-- **DELETE /clientes/{id}:** Exclui um cliente pelo ID.
-- **GET /produtos:** Retorna uma lista de todos os produtos.
-- **GET /produtos/{id}:** Retorna os detalhes de um produto específico pelo ID.
-- **POST /produtos:** Cria um novo produto.
-- **PUT /produtos/{id}:** Atualiza os detalhes de um produto existente pelo ID.
-- **DELETE /produtos/{id}:** Exclui um produto pelo ID.
+    - **Body:**
+    ```json 
+    {
+      "nome": "Maria Silva",
+      "cpf": 12345678900,
+      "rg": "1234567",
+      "login": "maria123",
+      "senha": "senha456",
+      "dataNascimento": "1985-03-20",
+      "dataCadastro": "2024-04-15T10:30:00",
+      "nomeUsuario": "maria_silva",
+      "emails": [
+        {
+          "email": "maria@example.com",
+          "dataCadastro": "2024-04-15T10:30:00",
+          "nomeUsuario": "maria_silva"
+        }
+      ],
+      "contatos": [
+        {
+          "ddi": 55,
+          "ddd": 11,
+          "telefone": 987654321,
+          "dataCadastro": "2024-04-15T10:30:00",
+          "nomeUsuario": "maria_silva"
+        }
+      ]
+  }
+    ```
 
-Para mais detalhes sobre cada endpoint, consulte a documentação da API.
 
 ---
-
-Este é apenas um exemplo básico de como você pode estruturar o README.md para o seu projeto. Você pode personalizá-lo conforme necessário, adicionando mais detalhes, instruções e informações relevantes sobre a sua aplicação.
