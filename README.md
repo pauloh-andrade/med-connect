@@ -1,4 +1,4 @@
-# Nome da Aplicação
+# MedConnect
 
 Este é o README para a aplicação **[medConnect]**.
 
@@ -14,8 +14,8 @@ Este é o README para a aplicação **[medConnect]**.
 Para rodar a aplicação, siga estas etapas:
 
 1. **Pré-requisitos:** 
-- Java Development Kit (JDK) instalado na sua máquina. Você pode baixar e instalar o JDK a partir do site oficial da Oracle ou usar uma distribuição OpenJDK.
-- Maven instalado na sua máquina.
+  - Java Development Kit (JDK) instalado na sua máquina. Você pode baixar e instalar o JDK a partir do site oficial da Oracle ou usar uma distribuição OpenJDK.
+  - Maven instalado na sua máquina.
 
   
 2. **Configuração:**
@@ -49,12 +49,12 @@ Para rodar a aplicação, siga estas etapas:
 
 Aqui está a imagem dos diagramas utilizados no projeto:
 
-![Diagrama de Classes]()
-![Diagrama Entidade Relacionamento](https://github.com/pauloh-andrade/med-connect/blob/main/documents/DER.pdf)
+[Diagrama de Classes]()
+[Diagrama Entidade Relacionamento](https://github.com/pauloh-andrade/med-connect/blob/main/documents/DER.pdf)
 
 ## Cronograma
 
-![Azure Board](https://github.com/pauloh-andrade/med-connect/blob/main/documents/cronograma_sprint_1.png)
+[Azure Board](https://github.com/pauloh-andrade/med-connect/blob/main/documents/cronograma_sprint_1.png)
 
 ## Vídeo de Apresentação
 
@@ -63,6 +63,8 @@ Assista ao vídeo de apresentação da nossa proposta tecnológica, público-alv
 ## Documentação da API
 
 A seguir está a listagem de todos os endpoints da API:
+
+**[Postman Collection](https://github.com/pauloh-andrade/med-connect/blob/main/documents/postaman/medConnect.postman_collection.json)**
 
 - **GET /clientes:** Retorna uma lista de todos os clientes.
 - **GET /clientes/{id}:** Retorna os detalhes de um cliente específico pelo ID.
