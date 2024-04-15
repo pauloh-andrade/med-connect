@@ -47,7 +47,7 @@ Para rodar a aplicação, siga estas etapas:
 
 ## Diagramas
 
-Aqui está a imagem dos diagramas utilizados no projeto:
+**Arquitetura:**
 
 ![Arquitetura](https://github.com/pauloh-andrade/med-connect/blob/main/documents/arquitetura.drawio.png)
 [Diagrama Entidade Relacionamento](https://github.com/pauloh-andrade/med-connect/blob/main/documents/DER.pdf)
