@@ -57,10 +57,6 @@ Para rodar a aplicação, siga estas etapas:
 
 [Azure Board](https://github.com/pauloh-andrade/med-connect/blob/main/documents/cronograma_sprint_1.png)
 
-## Vídeo de Apresentação
-
-Assista ao vídeo de apresentação da nossa proposta tecnológica, público-alvo e problemas que a aplicação se propõe a solucionar [aqui](link-para-o-vídeo](https://youtu.be/6wcKGa89850).
-
 ## Documentação da API
 
 A seguir está a listagem de todos os endpoints da API:
