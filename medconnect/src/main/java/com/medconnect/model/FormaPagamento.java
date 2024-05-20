@@ -1,5 +1,7 @@
 package com.medconnect.model;
 
+import com.medconnect.dto.formaPagamento.AtualizacaoFormaPagamentoDto;
+import com.medconnect.dto.formaPagamento.CadastroFormaPagamentoDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,4 +36,16 @@ public class FormaPagamento {
     @ManyToOne
     @JoinColumn(name="id_produto")
     private Produto produto;
+
+    public FormaPagamento(CadastroFormaPagamentoDto formaPagamentoDto) {
+        this.nome = formaPagamentoDto.nome();
+        this.descricao = formaPagamentoDto.descricao();
+        this.dataCadastro = formaPagamentoDto.dataCadastro();
+    }
+
+    public void atualizarInformacoesFormaPagamento(AtualizacaoFormaPagamentoDto atualizacaoFormaPagamentoDto) {
+        this.nome = atualizacaoFormaPagamentoDto.nome();
+        this.descricao = atualizacaoFormaPagamentoDto.descricao();
+        this.dataCadastro = atualizacaoFormaPagamentoDto.dataCadastro();
+    }
 }

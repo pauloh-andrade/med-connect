@@ -1,5 +1,7 @@
 package com.medconnect.model;
 
+import com.medconnect.dto.logradouro.AtualizacaoLogradouroDto;
+import com.medconnect.dto.logradouro.CadastroLogradouroDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -39,4 +41,16 @@ public class Logradouro {
     @ManyToOne
     @JoinColumn(name="id_bairro")
     private Bairro bairro;
+
+    public Logradouro(CadastroLogradouroDto logradouroDto) {
+        this.nome = logradouroDto.nome();
+        this.cep = logradouroDto.cep();
+        this.dataCadastro = logradouroDto.dataCadastro();
+    }
+
+    public void atualizarInformacoesLogradouro(AtualizacaoLogradouroDto atualizacaoLogradouroDto) {
+        this.nome = atualizacaoLogradouroDto.nome();
+        this.cep = atualizacaoLogradouroDto.cep();
+        this.dataCadastro = atualizacaoLogradouroDto.dataCadastro();
+    }
 }

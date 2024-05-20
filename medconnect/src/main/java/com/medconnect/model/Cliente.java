@@ -1,5 +1,6 @@
 package com.medconnect.model;
 
+import com.medconnect.dto.cliente.AtualizacaoClienteDto;
 import com.medconnect.dto.cliente.CadastroClienteDto;
 import com.medconnect.dto.cliente.CadastroContatoDto;
 import com.medconnect.dto.cliente.CadastroEmailDto;
@@ -7,6 +8,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.sql.Update;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -23,7 +25,8 @@ import java.util.List;
 @EntityListeners(AuditingEntityListener.class)
 public class Cliente {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente")
+    @SequenceGenerator(name = "cliente", sequenceName = "seq_mi_cliente", allocationSize = 1)
     @Column(name="id_cliente")
     private Long idCliente;
 
@@ -88,6 +91,46 @@ public class Cliente {
             }
         }
     }
+
+    public void atualizarInformacoesCliente(AtualizacaoClienteDto clienteDto) {
+        if (clienteDto.nome() != null) {
+            this.nome = clienteDto.nome();
+        }
+        if (clienteDto.nome() != null) {
+            this.cpf = clienteDto.cpf();
+        }
+        if (clienteDto.nome() != null) {
+            this.rg = clienteDto.rg();
+        }
+        if (clienteDto.nome() != null) {
+            this.login = clienteDto.login();
+        }
+        if (clienteDto.nome() != null) {
+            this.senha = clienteDto.senha();
+        }
+        if (clienteDto.nome() != null) {
+            this.dataNascimento = clienteDto.dataNascimento();
+        }
+
+        if (clienteDto.emails() != null) {
+            this.emails = new ArrayList<>();
+            for (CadastroEmailDto emailDto : clienteDto.emails()) {
+                Email email = new Email(emailDto);
+                email.setCliente(this);
+                this.emails.add(email);
+            }
+        }
+
+        if (clienteDto.contatos() != null) {
+            this.contatos = new ArrayList<>();
+            for (CadastroContatoDto contatoDto : clienteDto.contatos()) {
+                Contato contato = new Contato(contatoDto);
+                contato.setCliente(this);
+                this.contatos.add(contato);
+            }
+        }
+    }
 }
+
 
 

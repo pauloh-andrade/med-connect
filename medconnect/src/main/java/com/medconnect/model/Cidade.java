@@ -1,5 +1,6 @@
 package com.medconnect.model;
 
+import com.medconnect.dto.cidade.CadastroCidadeDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,4 +44,11 @@ public class Cidade {
     @ManyToOne
     @JoinColumn(name="id_estado")
     private Estado estado;
+
+    public Cidade(CadastroCidadeDto cidadeDto) {
+        this.nome = cidadeDto.nome();
+        this.codigoIBGE = cidadeDto.codigoIBGE();
+        this.ddd = cidadeDto.ddd();
+        this.dataCadastro = cidadeDto.dataCadastro();
+    }
 }

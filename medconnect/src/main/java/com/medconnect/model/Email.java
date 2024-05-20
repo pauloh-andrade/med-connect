@@ -1,7 +1,7 @@
 package com.medconnect.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.medconnect.dto.cliente.CadastroEmailDto;
+import com.medconnect.dto.email.CadastroEmailDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,6 +34,11 @@ public class Email {
     @ManyToOne
     @JoinColumn(name="id_cliente", nullable = false)
     private Cliente cliente;
+
+    public Email(com.medconnect.dto.cliente.CadastroEmailDto emailDto) {
+        this.email = emailDto.email();
+        this.dataCadastro = emailDto.dataCadastro();
+    }
 
     public Email(CadastroEmailDto emailDto) {
         this.email = emailDto.email();

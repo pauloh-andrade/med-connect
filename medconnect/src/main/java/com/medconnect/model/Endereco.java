@@ -1,5 +1,7 @@
 package com.medconnect.model;
 
+import com.medconnect.dto.endereco.AtualizacaoEnderecoDto;
+import com.medconnect.dto.endereco.CadastroEnderecoDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -40,4 +42,18 @@ public class Endereco {
 
     @OneToOne(mappedBy = "endereco")
     private Logradouro logradouro;
+
+    public Endereco(CadastroEnderecoDto enderecoDto) {
+        this.numeroLogradouro = enderecoDto.numeroLogradouro();
+        this.complementoNumero = enderecoDto.complementoNumero();
+        this.pontoReferencia = enderecoDto.pontoReferencia();
+        this.dataCadastro = enderecoDto.dataCadastro();
+    }
+
+    public void atualizarInformacoesEndereco(AtualizacaoEnderecoDto atualizacaoEnderecoDto) {
+        this.numeroLogradouro = atualizacaoEnderecoDto.numeroLogradouro();
+        this.complementoNumero = atualizacaoEnderecoDto.complementoNumero();
+        this.pontoReferencia = atualizacaoEnderecoDto.pontoReferencia();
+        this.dataCadastro = atualizacaoEnderecoDto.dataCadastro();
+    }
 }

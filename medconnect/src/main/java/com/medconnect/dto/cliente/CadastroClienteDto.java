@@ -10,17 +10,22 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public record CadastroClienteDto(
-        @NotBlank
+        @NotBlank(message = "O nome não pode estar em branco")
+        @Size(max = 150, message = "A descrição deve ter no máximo 150 caracteres")
         String nome,
-        @NotNull
+
+        @NotNull(message = "O CPF não pode ser nulo")
         Long cpf,
-        @NotBlank
+        @NotBlank(message = "O RG não pode ser nulo")
+        @Size(max = 10, message = "Deve ter no máximo 10 caracteres")
         String rg,
-        @NotBlank
+        @NotBlank(message = "O login não pode estar em branco")
+        @Size(max = 30, message = "Deve ter no máximo 30 caracteres")
         String login,
-        @NotBlank
+        @NotBlank(message = "O login não pode estar em branco")
+        @Size(max = 30, message = "Deve ter no máximo 30 caracteres")
         String senha,
-        @NotNull
+        @NotNull(message = "A data não pode ser nula")
         LocalDate dataNascimento,
         @NotNull
         List<CadastroEmailDto> emails,

@@ -41,6 +41,13 @@ public class Contato {
     @JoinColumn(name="id_cliente", nullable = false)
     private Cliente cliente;
 
+    public Contato(com.medconnect.dto.contato.CadastroContatoDto contatoDto) {
+        this.ddi = contatoDto.ddi();
+        this.ddd = contatoDto.ddd();
+        this.telefone = contatoDto.telefone();
+        this.dataCadastro = contatoDto.dataCadastro();
+    }
+
     public Contato(CadastroContatoDto contatoDto) {
         this.ddi = contatoDto.ddi();
         this.ddd = contatoDto.ddd();

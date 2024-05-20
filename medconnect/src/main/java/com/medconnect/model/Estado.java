@@ -1,5 +1,7 @@
 package com.medconnect.model;
 
+import com.medconnect.dto.estado.AtualizacaoEstadoDto;
+import com.medconnect.dto.estado.CadastroEstadoDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,4 +37,16 @@ public class Estado {
 
     @OneToMany(mappedBy = "estado")
     private List<Cidade> cidades = new ArrayList<>();
+
+    public Estado(CadastroEstadoDto estadoDto) {
+        this.sigla = estadoDto.sigla();
+        this.nome = estadoDto.nome();
+        this.dataCadastro = estadoDto.dataCadastro();
+    }
+
+    public void atualizarInformacoesEstado(AtualizacaoEstadoDto atualizacaoEstadoDto) {
+        this.sigla = atualizacaoEstadoDto.sigla();
+        this.nome = atualizacaoEstadoDto.nome();
+        this.dataCadastro = atualizacaoEstadoDto.dataCadastro();
+    }
 }

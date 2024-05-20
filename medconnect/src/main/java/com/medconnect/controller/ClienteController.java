@@ -1,5 +1,6 @@
 package com.medconnect.controller;
 
+import com.medconnect.dto.cliente.AtualizacaoClienteDto;
 import com.medconnect.dto.cliente.CadastroClienteDto;
 import com.medconnect.dto.cliente.ResponseClienteDto;
 import com.medconnect.model.Cliente;
@@ -25,15 +26,18 @@ public class ClienteController {
     public ResponseEntity<List<ResponseClienteDto>> getAllClientes() {
         List<Cliente> clientes = clienteRepository.findAll();
         List<ResponseClienteDto> responseClientes = new ArrayList<>();
+
         for (Cliente cliente : clientes) {
             responseClientes.add(new ResponseClienteDto(cliente));
         }
+
         return ResponseEntity.ok(responseClientes);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ResponseClienteDto> getClienteById(@PathVariable Long id) {
         Optional<Cliente> optionalCliente = clienteRepository.findById(id);
+
         if (optionalCliente.isPresent()) {
             Cliente cliente = optionalCliente.get();
             return ResponseEntity.ok(new ResponseClienteDto(cliente));
@@ -52,5 +56,21 @@ public class ClienteController {
         var uri = uriBuilder.path("clientes/{id}").buildAndExpand(cliente.getIdCliente()).toUri();
 
         return ResponseEntity.created(uri).body(new ResponseClienteDto(cliente));
+    }
+
+    @DeleteMapping("{id}")
+    @Transactional
+    public ResponseEntity<Void> delete(@PathVariable("id")Long id){
+        clienteRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("{id}")
+    @Transactional
+    public ResponseEntity<ResponseClienteDto> put(@PathVariable("id")Long id,
+                                                      @RequestBody @Valid AtualizacaoClienteDto atualizacaoClienteDto){
+        Cliente cliente = clienteRepository.getReferenceById(id);
+        cliente.atualizarInformacoesCliente(atualizacaoClienteDto);
+        return ResponseEntity.ok(new ResponseClienteDto(cliente));
     }
 }

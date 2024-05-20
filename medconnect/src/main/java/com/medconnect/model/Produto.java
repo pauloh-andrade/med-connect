@@ -1,5 +1,7 @@
 package com.medconnect.model;
 
+import com.medconnect.dto.produto.AtualizacaoProdutoDto;
+import com.medconnect.dto.produto.CadastroProdutoDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -47,4 +49,20 @@ public class Produto {
 
     @OneToMany(mappedBy = "produto")
     private List<FormaPagamento> formasPagamento = new ArrayList<>();
+
+    public Produto(CadastroProdutoDto produtoDto) {
+        this.nome = produtoDto.nome();
+        this.descricao = produtoDto.descricao();
+        this.quantidadeEstoque = produtoDto.quantidadeEstoque();
+        this.categoria = produtoDto.categoria();
+        this.valor = produtoDto.valor();
+    }
+
+    public void atualizarInformacoesProduto(AtualizacaoProdutoDto atualizacaoProdutoDto) {
+        this.nome = atualizacaoProdutoDto.nome();
+        this.descricao = atualizacaoProdutoDto.descricao();
+        this.quantidadeEstoque = atualizacaoProdutoDto.quantidadeEstoque();
+        this.categoria = atualizacaoProdutoDto.categoria();
+        this.valor = atualizacaoProdutoDto.valor();
+    }
 }

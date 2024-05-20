@@ -1,5 +1,6 @@
 package com.medconnect.model;
 
+import com.medconnect.dto.compra.CadastroCompraDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -41,5 +42,14 @@ public class Compra {
     @ManyToOne
     @JoinColumn(name="id_produto")
     private Produto produto;
+
+    public Compra(CadastroCompraDto compraDto) {
+        this.quantidade = compraDto.quantidade();
+        this.valor = compraDto.valor();
+        this.enderecoEntrega = compraDto.enderecoEntrega();
+        this.dataCadastro = compraDto.dataCadastro();
+        this.cliente = compraDto.cliente();
+        this.produto = compraDto.produto();
+    }
 }
 
